@@ -3,22 +3,29 @@ import ReactDOM from 'react-dom';
 
 import "./index.css"
 
+const firstBook = {
+    author: "Joseph Nguyen",
+    image: "https://m.media-amazon.com/images/I/715qi-cIbML._SL1500_.jpg",
+    title: "Don't Believe Everything You Think",
+};
+const secondBook = {
+    author: "Manny Coats",
+    image: "https://m.media-amazon.com/images/I/816rLNaN3QL._SL1500_.jpg",
+    title: "Selling on Amazon - Amazon Seller Secrets Revealed Volume 1",
+};
+
 const Booklist = () => {
     return <section className='booklist'>
-        <Book></Book>
-        <Book></Book>
-        <Book></Book>
-        <Book></Book>
+        <Book author={firstBook.author} title={firstBook.title} image={firstBook.image}></Book>
+        <Book author={secondBook.author} title={secondBook.title} image={secondBook.image}></Book>
     </section>
 }
-const author = "Joseph Nguyen";
-const image = "https://m.media-amazon.com/images/I/715qi-cIbML._SL1500_.jpg";
+
 const Book = (props) => {
-    const title = "Don't Believe Everything You Think";
     return <article className='book'>
-        <img src={image} alt={title} />
-        <h2>{title}</h2>
-        <h4>{author}</h4>
+        <img src={props.image} alt={props.title} />
+        <h2>{props.title}</h2>
+        <h4>{props.author}</h4>
     </article>
 }
 const root = ReactDOM.createRoot(document.getElementById('root'));
