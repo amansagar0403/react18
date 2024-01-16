@@ -26,7 +26,7 @@ const Book = ({ image, author, title, children }) => {
         <img src={image} alt={title} />
         <h2>{title}</h2>
         <h4>{author}</h4>
-        {children}
+        {/* {children} */}
     </article>
 }
 const root = ReactDOM.createRoot(document.getElementById('root'));
